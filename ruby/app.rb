@@ -25,10 +25,10 @@ class App < Sinatra::Base
 
     def generate_id(table, tx)
       id = ULID.generate
-      while tx.xquery("SELECT 1 FROM `#{table}` WHERE `id` = ? LIMIT 1", id).first
-        id = ULID.generate
-      end
-      id
+      # while tx.xquery("SELECT 1 FROM `#{table}` WHERE `id` = ? LIMIT 1", id).first
+      #   id = ULID.generate
+      # end
+      # id
     end
 
     def required_login!
